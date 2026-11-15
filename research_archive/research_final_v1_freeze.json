@@ -1,0 +1,8 @@
+{
+  "version": "research-final-1",
+  "source_sha256": "c743f08cf32990f8d7998a493b8443d939ca2cc688e76faf37659aca5f9d6598",
+  "config_sha256": "1945411624a30d0ec4d0a9cd0a89233b8a54c793cd421dffb73937adf8b3f3b0",
+  "archive_sha256": "98aacf7edf9911eab2b72a8d636ecac2f423aa663d2bc59477b120c30255b71f",
+  "test_gate": "181 passed; 28 regression passed; ruff clean",
+  "selection": "no final-set tuning"
+}

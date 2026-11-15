@@ -1,0 +1,12 @@
+{
+  "version": "research-step1-1",
+  "purpose": "development diagnostics only; final benchmark remains blocked pending Step 2 approval",
+  "seeds": [200,201,202,203,204,205,206,207,208,209],
+  "unknown_prior": 0.1,
+  "fault_threshold": 0.5,
+  "unknown_threshold": 0.5,
+  "quadrature_nodes": 7,
+  "model": "continuous-audit-1",
+  "unknown_mean_prior": {"mean_each_instrument": 3.0, "sd_each_instrument": 2.0},
+  "threshold_selection": "inherited 0.5; no held-out tuning or calibrated-performance claim"
+}

@@ -1,0 +1,20 @@
+{
+  "version": "benchmark-2",
+  "scenarios": ["ordinary", "unusual", "bias", "drift", "conflict", "outside"],
+  "policies": ["voi", "fixed_model", "information_gain", "threshold"],
+  "train_seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "development_seeds": [100, 101, 102, 103, 104, 105, 106, 107, 108, 109],
+  "heldout_seeds": [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009],
+  "bootstrap_seed": 2026,
+  "bootstrap_resamples": 1000,
+  "noise_mode": "keyed",
+  "fault_threshold": 0.5,
+  "unknown_threshold": 0.5,
+  "discovery_positive_geologies": ["sulfate", "other"],
+  "reward_correct": 10.0,
+  "reward_wrong": -20.0,
+  "energy_penalty": 0.15,
+  "time_penalty": 0.1,
+  "abstain_reward": 0.0,
+  "escalate_reward": 1.0
+}

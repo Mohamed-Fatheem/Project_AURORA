@@ -1,0 +1,621 @@
+{
+  "ablations": [
+    "no_reference",
+    "no_fault",
+    "no_unknown",
+    "no_verification",
+    "no_cost",
+    "information_gain"
+  ],
+  "action_costs": {
+    "calibrate_spectrometer": [
+      4.0,
+      2.0
+    ],
+    "check_imager": [
+      1.0,
+      1.0
+    ],
+    "check_spectrometer": [
+      1.0,
+      1.0
+    ],
+    "measure_imager": [
+      1.0,
+      1.5
+    ],
+    "measure_spectrometer": [
+      2.0,
+      1.0
+    ]
+  },
+  "bootstrap_resamples": 1000,
+  "bootstrap_seed": 42026,
+  "cases": {
+    "bias": {
+      "config": {
+        "bias": 1.2,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "bias"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "basalt",
+        "horizon": 5,
+        "name": "bias",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": null
+    },
+    "both_faults": {
+      "config": {
+        "bias": 1.2,
+        "conditions": {
+          "imager": "bias",
+          "spectrometer": "bias"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "basalt",
+        "horizon": 5,
+        "name": "both_faults",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": null
+    },
+    "conflict": {
+      "config": {
+        "bias": 1.5,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "bias"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "clay",
+        "horizon": 5,
+        "name": "conflict",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": null
+    },
+    "drift": {
+      "config": {
+        "bias": 0.0,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "drift"
+        },
+        "drift_per_hour": 0.5,
+        "energy_wh": 12.0,
+        "geology": "clay",
+        "horizon": 5,
+        "name": "drift",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": null
+    },
+    "high_noise": {
+      "config": {
+        "bias": 0.0,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "healthy"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "basalt",
+        "horizon": 5,
+        "name": "high_noise",
+        "noise_scale": 2.0,
+        "time_h": 12.0
+      },
+      "private_means": null
+    },
+    "negative_bias": {
+      "config": {
+        "bias": -0.8,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "bias"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "basalt",
+        "horizon": 5,
+        "name": "negative_bias",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": null
+    },
+    "ordinary": {
+      "config": {
+        "bias": 0.0,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "healthy"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "basalt",
+        "horizon": 5,
+        "name": "ordinary",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": null
+    },
+    "outside": {
+      "config": {
+        "bias": 0.0,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "healthy"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "other",
+        "horizon": 5,
+        "name": "outside",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": null
+    },
+    "unknown_alias": {
+      "config": {
+        "bias": 0.0,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "healthy"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "other",
+        "horizon": 5,
+        "name": "unknown_alias",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": [
+        1.0,
+        4.0
+      ]
+    },
+    "unknown_boundary": {
+      "config": {
+        "bias": 0.0,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "healthy"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "other",
+        "horizon": 5,
+        "name": "unknown_boundary",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": [
+        3.25,
+        2.0
+      ]
+    },
+    "unknown_fault": {
+      "config": {
+        "bias": 1.2,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "bias"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "other",
+        "horizon": 5,
+        "name": "unknown_fault",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": [
+        2.8,
+        3.8
+      ]
+    },
+    "unknown_overlap": {
+      "config": {
+        "bias": 0.0,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "healthy"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "other",
+        "horizon": 5,
+        "name": "unknown_overlap",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": [
+        1.4,
+        3.5
+      ]
+    },
+    "unseen_imager_fault": {
+      "config": {
+        "bias": -1.1,
+        "conditions": {
+          "imager": "bias",
+          "spectrometer": "healthy"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "basalt",
+        "horizon": 5,
+        "name": "unseen_imager_fault",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": null
+    },
+    "unseen_noisy_clay": {
+      "config": {
+        "bias": 0.0,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "healthy"
+        },
+        "drift_per_hour": 0.5,
+        "energy_wh": 12.0,
+        "geology": "clay",
+        "horizon": 5,
+        "name": "unseen_noisy_clay",
+        "noise_scale": 1.5,
+        "time_h": 12.0
+      },
+      "private_means": null
+    },
+    "unseen_sulfate_drift": {
+      "config": {
+        "bias": 0.0,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "drift"
+        },
+        "drift_per_hour": -0.3,
+        "energy_wh": 12.0,
+        "geology": "sulfate",
+        "horizon": 5,
+        "name": "unseen_sulfate_drift",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": null
+    },
+    "unseen_unknown_mixed": {
+      "config": {
+        "bias": 0.0,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "healthy"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "other",
+        "horizon": 5,
+        "name": "unseen_unknown_mixed",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": [
+        4.3,
+        3.3
+      ]
+    },
+    "unseen_unknown_near_clay": {
+      "config": {
+        "bias": 0.0,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "healthy"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "other",
+        "horizon": 5,
+        "name": "unseen_unknown_near_clay",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": [
+        2.7,
+        2.5
+      ]
+    },
+    "unseen_unknown_negative_fault": {
+      "config": {
+        "bias": -0.9,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "bias"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "other",
+        "horizon": 5,
+        "name": "unseen_unknown_negative_fault",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": [
+        3.7,
+        3.6
+      ]
+    },
+    "unusual": {
+      "config": {
+        "bias": 0.0,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "healthy"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "sulfate",
+        "horizon": 5,
+        "name": "unusual",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": null
+    },
+    "weak_bias": {
+      "config": {
+        "bias": 0.3,
+        "conditions": {
+          "imager": "healthy",
+          "spectrometer": "bias"
+        },
+        "drift_per_hour": 0.0,
+        "energy_wh": 12.0,
+        "geology": "basalt",
+        "horizon": 5,
+        "name": "weak_bias",
+        "noise_scale": 1.0,
+        "time_h": 12.0
+      },
+      "private_means": null
+    }
+  },
+  "development_seeds": [
+    3000,
+    3001,
+    3002,
+    3003,
+    3004,
+    3005,
+    3006,
+    3007,
+    3008,
+    3009,
+    3010,
+    3011,
+    3012,
+    3013,
+    3014,
+    3015,
+    3016,
+    3017,
+    3018,
+    3019
+  ],
+  "fault_threshold": 0.5,
+  "final_seeds": [
+    5000,
+    5001,
+    5002,
+    5003,
+    5004,
+    5005,
+    5006,
+    5007,
+    5008,
+    5009,
+    5010,
+    5011,
+    5012,
+    5013,
+    5014,
+    5015,
+    5016,
+    5017,
+    5018,
+    5019,
+    5020,
+    5021,
+    5022,
+    5023,
+    5024,
+    5025,
+    5026,
+    5027,
+    5028,
+    5029,
+    5030,
+    5031,
+    5032,
+    5033,
+    5034,
+    5035,
+    5036,
+    5037,
+    5038,
+    5039,
+    5040,
+    5041,
+    5042,
+    5043,
+    5044,
+    5045,
+    5046,
+    5047,
+    5048,
+    5049
+  ],
+  "generalization": "six unseen_* cases excluded from development suite",
+  "noise_contract": "SeedSequence(seed,instrument,reading_count,reference_flag); paired per instrument and kind",
+  "policies": [
+    "improved_voi",
+    "original_voi",
+    "information_gain",
+    "fixed_model",
+    "threshold"
+  ],
+  "primary_settings": {
+    "ablation": "none",
+    "assumed_noise": null,
+    "fault_healthy_prior": 0.8,
+    "nodes": 7,
+    "policy": "improved_voi",
+    "unknown_prior": 0.1,
+    "wrong_reward": -20.0
+  },
+  "primary_utility": {
+    "abstain": 0,
+    "correct": 10,
+    "energy": 0.15,
+    "time": 0.1,
+    "wrong": -20
+  },
+  "quadrature": "7 nodes nominal; 15-node sensitivity; calibration value omits reference bonus",
+  "reference_contract": "all policies receive pre-reset reference at same calibration cost",
+  "robustness_cases": [
+    "ordinary",
+    "bias",
+    "drift",
+    "unknown_overlap",
+    "unknown_boundary",
+    "unknown_fault"
+  ],
+  "robustness_seeds": [
+    7000,
+    7001,
+    7002,
+    7003,
+    7004,
+    7005,
+    7006,
+    7007,
+    7008,
+    7009
+  ],
+  "robustness_variants": [
+    {
+      "name": "nominal"
+    },
+    {
+      "name": "unknown_prior_low",
+      "settings": {
+        "unknown_prior": 0.03
+      }
+    },
+    {
+      "name": "unknown_prior_high",
+      "settings": {
+        "unknown_prior": 0.3
+      }
+    },
+    {
+      "name": "healthy_prior_low",
+      "settings": {
+        "fault_healthy_prior": 0.5
+      }
+    },
+    {
+      "name": "healthy_prior_high",
+      "settings": {
+        "fault_healthy_prior": 0.95
+      }
+    },
+    {
+      "name": "noise_low",
+      "world": {
+        "noise_scale": 0.5
+      }
+    },
+    {
+      "name": "noise_high",
+      "world": {
+        "noise_scale": 2.0
+      }
+    },
+    {
+      "name": "noise_underestimated",
+      "settings": {
+        "assumed_noise": 1.0
+      },
+      "world": {
+        "noise_scale": 2.0
+      }
+    },
+    {
+      "name": "noise_overestimated",
+      "settings": {
+        "assumed_noise": 2.0
+      }
+    },
+    {
+      "name": "bias_weak",
+      "world": {
+        "bias": 0.3
+      }
+    },
+    {
+      "name": "bias_strong",
+      "world": {
+        "bias": 2.0
+      }
+    },
+    {
+      "name": "drift_slow",
+      "world": {
+        "drift_per_hour": 0.2
+      }
+    },
+    {
+      "name": "drift_fast",
+      "world": {
+        "drift_per_hour": 0.8
+      }
+    },
+    {
+      "name": "wrong_penalty_low",
+      "settings": {
+        "wrong_reward": -10.0
+      }
+    },
+    {
+      "name": "wrong_penalty_high",
+      "settings": {
+        "wrong_reward": -40.0
+      }
+    },
+    {
+      "name": "quadrature_15",
+      "settings": {
+        "nodes": 15
+      }
+    }
+  ],
+  "selection": "nominal Step 1 parameters; no threshold optimization",
+  "unknown_threshold": 0.5,
+  "verification": "all matched policies require both instruments before conclusion; candidates enforce missing-instrument verification",
+  "version": "research-final-1"
+}

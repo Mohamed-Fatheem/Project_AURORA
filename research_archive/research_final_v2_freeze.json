@@ -1,0 +1,9 @@
+{
+  "version": "research-final-2",
+  "source_sha256": "2bdfe7cc4169037002fc5e64c04722cb1c4565d5ed503c1727e51b1f72269473",
+  "config_sha256": "90850fe3777d8f160cfef8afb5a9cc6eba5417d5c3095067cc71da86b4e7638d",
+  "archive_sha256": "3045dc5156076c27ce461682a653dfb35cceb0d730fc4e5e28cb8a2d6520466f",
+  "test_gate": "182 passed; 28 regression passed; ruff clean",
+  "sampling": "independent case streams; paired policies; fresh untouched partitions",
+  "selection": "no final-set tuning"
+}
