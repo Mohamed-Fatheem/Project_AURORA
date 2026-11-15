@@ -1,6 +1,4 @@
 {
-  "configs\\benchmark_v2.json": "740ec9df4cf5c9f364442f345dd810d59b1cea23a4c098ae5edd324cbde8bfce",
-  "results\\benchmark_heldout.json": "d6c51e74c0374db76d73690c96d23d21f39f1ff8305bf447748e25b24c54fbf1",
-  "results\\benchmark_development.json": "0a781b0acd9ed8c5ddc6a2cd357667ec21ca8ece7a35bcc99d2c1e6d68d8f9f8",
-  "tests\\regression\\test_stage5.py": "9f1ecd1c3784b396c33ddbc03b8140baf9dfcd1c1198275905db5648b87cd828"
+  "configs/benchmark_v2.json": "740ec9df4cf5c9f364442f345dd810d59b1cea23a4c098ae5edd324cbde8bfce",
+  "tests/regression/test_stage5.py": "9f1ecd1c3784b396c33ddbc03b8140baf9dfcd1c1198275905db5648b87cd828"
 }

@@ -20,8 +20,9 @@ def test_final_step1_source_archive():
         for name in sorted(archive.namelist()):
             digest.update(name.encode())
             digest.update(archive.read(name))
-    original = json.loads((ROOT / "results/research_step1_diagnostics.json").read_text())
-    assert digest.hexdigest() == original["source_sha256"]
+    freeze = json.loads((ROOT / "research_archive/research_step1_freeze.json").read_text())
+    assert freeze["version"] == "research-step1"
+    assert digest.hexdigest() == freeze["source_sha256"]
 
 
 def test_final_improved_nominal_matches_approved_step1():
